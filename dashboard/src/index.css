@@ -1,0 +1,1037 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f5f7fb;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* =====================================
+   DASHBOARD LAYOUT
+===================================== */
+
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f5f7fb;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.watchlist-container {
+  width: 380px;
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  background: white;
+
+  border-right: 1px solid rgb(235, 235, 235);
+
+  overflow-y: auto;
+
+  position: relative;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+}
+
+/* =====================================
+   CONTENT
+===================================== */
+
+.content {
+  width: calc(100% - 380px);
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  overflow-y: auto;
+
+  padding: 2%;
+}
+
+/* =====================================
+   TOPBAR
+===================================== */
+
+.topbar-container {
+  width: 100%;
+
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: white;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+
+  border-radius: 12px;
+
+  padding: 0 20px;
+
+  margin-bottom: 20px;
+
+  box-sizing: border-box;
+}
+
+/* =====================================
+   MARKET
+===================================== */
+
+.indices-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding-right: 20px;
+
+  border-right: 1px solid rgb(235, 235, 235);
+}
+
+.nifty,
+.sensex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.index {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(90, 90, 90);
+}
+
+.index-points {
+  font-size: 0.8rem;
+  color: rgb(223, 73, 73);
+}
+
+.percent {
+  font-size: 0.75rem;
+  color: rgb(146, 146, 146);
+}
+
+/* =====================================
+   MENU
+===================================== */
+
+.menu-container {
+  flex: 1;
+
+  height: 100%;
+
+  padding: 10px 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.logo {
+  width: 32px;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+}
+
+.menus ul {
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 0;
+  margin: 0;
+}
+
+.menu {
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  color: rgb(70, 70, 70);
+
+  transition: 0.3s ease;
+}
+
+.menu:hover {
+  color: rgb(245, 104, 52);
+}
+
+.menu.selected {
+  color: rgb(245, 104, 52);
+}
+
+/* =====================================
+   PROFILE
+===================================== */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile .avatar {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 100%;
+
+  background: #4184f3;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.profile .username {
+  font-size: 0.85rem;
+}
+
+/* =====================================
+   SEARCH
+===================================== */
+
+.search-container {
+  position: relative;
+  padding: 15px;
+}
+
+.search {
+  width: 100%;
+
+  border: 1px solid rgb(235, 235, 235);
+
+  border-radius: 10px;
+
+  padding: 12px 15px;
+
+  font-size: 0.9rem;
+
+  box-sizing: border-box;
+}
+
+.search:focus {
+  outline: none;
+  border-color: #4184f3;
+}
+
+.counts {
+  position: absolute;
+  right: 30px;
+  top: 28px;
+
+  color: rgb(170, 170, 170);
+  font-size: 0.8rem;
+}
+
+/* =====================================
+   WATCHLIST
+===================================== */
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  border-bottom: 1px solid rgb(240, 240, 240);
+
+  padding: 14px;
+
+  position: relative;
+
+  transition: 0.3s ease;
+}
+
+.list li:hover {
+  background: #f3f7ff;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.item-info span:nth-child(1) {
+  color: rgb(120, 120, 120);
+}
+
+.item-info span:nth-child(2) {
+  color: rgb(223, 73, 73);
+}
+
+.item-info span:nth-child(3) {
+  color: rgb(50, 50, 50);
+  font-weight: 500;
+}
+
+/* =====================================
+   ACTIONS
+===================================== */
+
+.actions {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  padding-right: 10px;
+
+  box-sizing: border-box;
+}
+
+.list li:hover .actions {
+  display: flex;
+}
+
+.actions button {
+  width: 40px;
+  height: 30px;
+
+  border-radius: 6px;
+
+  margin-left: 6px;
+
+  cursor: pointer;
+
+  border: none;
+}
+
+.buy {
+  background: #4184f3;
+  color: white;
+}
+
+.sell {
+  background: #ff5722;
+  color: white;
+}
+
+.action {
+  background: white;
+  border: 1px solid #ddd !important;
+}
+
+/* =====================================
+   TABLES
+===================================== */
+
+.order-table,
+.table {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  margin-top: 20px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+}
+
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-table tr {
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.order-table th,
+.order-table td {
+  padding: 15px 10px;
+}
+
+.order-table th {
+  text-align: right;
+
+  color: rgb(145, 145, 145);
+
+  font-weight: 400;
+
+  font-size: 0.8rem;
+}
+
+.order-table td {
+  text-align: right;
+
+  color: rgb(73, 73, 73);
+
+  font-size: 0.9rem;
+}
+
+.order-table tr th:first-child,
+.order-table tr td:first-child {
+  text-align: left;
+}
+
+/* =====================================
+   ROWS / CARDS
+===================================== */
+
+.row {
+  display: flex;
+
+  align-items: stretch;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 20px;
+}
+
+.col {
+  flex: 1;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+}
+
+.col h5 {
+  font-size: 2rem;
+  font-weight: 400;
+
+  color: rgb(71, 71, 71);
+}
+
+.col p {
+  font-size: 0.9rem;
+  color: rgb(140, 140, 140);
+}
+
+/* =====================================
+   DATA SECTION
+===================================== */
+
+.data {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  flex-wrap: wrap;
+}
+
+.data .first,
+.data .second {
+  flex: 1;
+}
+
+/* =====================================
+   WATCHLIST FOOTER
+===================================== */
+
+.watchlist-number {
+  width: 380px;
+
+  position: fixed;
+
+  bottom: 0;
+  left: 0;
+
+  background: white;
+
+  border-top: 1px solid rgb(235, 235, 235);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.watchlist-number ul {
+  list-style: none;
+
+  display: flex;
+
+  padding: 0;
+  margin: 0;
+}
+
+.watchlist-number ul li {
+  margin-right: 15px;
+}
+
+/* =====================================
+   COLORS
+===================================== */
+
+.up {
+  color: rgb(72, 194, 55);
+}
+
+.down {
+  color: rgb(223, 73, 73);
+}
+
+.profit {
+  color: rgb(72, 194, 55);
+}
+
+.loss {
+  color: rgb(250, 118, 78);
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 992px) {
+
+  .watchlist-container {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .topbar-container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 15px;
+  }
+
+  .menu-container {
+    width: 100%;
+
+    margin-top: 15px;
+
+    padding: 0;
+  }
+
+  .indices-container {
+    border: none;
+
+    padding-right: 0;
+  }
+}
+
+.content {
+  background: #f5f7fb;
+}
+
+.content > * {
+  max-width: 1400px;
+}
+.watchlist-container {
+  width: 400px;
+}
+
+.watchlist-number {
+  width: 400px;
+}
+.content {
+  width: calc(100% - 400px);
+}
+.topbar-container {
+  border-radius: 16px;
+}
+.col {
+  transition: 0.3s ease;
+}
+
+.col:hover {
+  transform: translateY(-4px);
+}
+
+.order-table tr:hover {
+  background: #f9fafb;
+}
+/* PROFILE */
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  cursor: pointer;
+}
+
+/* LOGOUT */
+
+.logout-btn {
+  border: none;
+
+  background: #ef4444;
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-size: 0.8rem;
+
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media screen and (max-width: 992px) {
+
+  /* SIDEBAR */
+
+  .watchlist-container {
+    display: none;
+  }
+
+  .watchlist-number {
+    display: none;
+  }
+
+  /* CONTENT */
+
+  .content {
+    width: 100% !important;
+
+    padding: 15px !important;
+  }
+
+  /* TOPBAR */
+
+  .topbar-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 15px;
+
+    gap: 15px;
+  }
+
+  .indices-container {
+    width: 100%;
+
+    border-right: none;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 10px;
+  }
+
+  .menu-container {
+    width: 100%;
+
+    padding: 0;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+  .menus ul {
+    flex-wrap: wrap;
+
+    gap: 15px;
+  }
+
+  /* CARDS */
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  /* TABLE */
+
+  .order-table {
+    overflow-x: auto;
+  }
+
+  .order-table table {
+    min-width: 700px;
+  }
+
+  /* DATA */
+
+  .data {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  /* BUTTONS */
+
+  .funds {
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  /* CHARTS */
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* IMAGES */
+
+  img {
+    max-width: 100%;
+  }
+
+}
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media screen and (max-width: 992px) {
+
+  /* BODY */
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* DASHBOARD */
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  /* MOBILE BUTTON */
+
+  .mobile-menu-btn {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4184f3;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    z-index: 3000;
+
+    box-shadow:
+      0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  /* SIDEBAR */
+
+  .dashboard-sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: -100%;
+
+    width: 300px;
+
+    height: 100vh;
+
+    background: white;
+
+    z-index: 2500;
+
+    transition: 0.3s ease;
+
+    overflow-y: auto;
+
+    box-shadow:
+      0 0 20px rgba(0,0,0,0.1);
+  }
+
+  .dashboard-sidebar.mobile-show {
+    left: 0;
+  }
+
+  /* WATCHLIST */
+
+  .watchlist-container {
+
+    width: 100% !important;
+
+    min-height: 100vh;
+
+    border-right: none;
+  }
+
+  .watchlist-number {
+    display: none;
+  }
+
+  /* CONTENT */
+
+  .dashboard-content,
+  .content {
+
+    width: 100% !important;
+
+    margin-left: 0 !important;
+
+    padding: 75px 15px 20px 15px !important;
+
+    box-sizing: border-box;
+  }
+
+  /* TOPBAR */
+
+  .topbar-container {
+
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+  }
+
+  /* INDICES */
+
+  .indices-container {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    gap: 20px;
+
+    border-right: none;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 10px;
+  }
+
+  /* MENU */
+
+  .menu-container {
+
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 0;
+  }
+
+  .menus {
+    width: 100%;
+  }
+
+  .menus ul {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding: 0;
+  }
+
+  /* PROFILE */
+
+  .profile {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  /* ROWS */
+
+  .row {
+
+    flex-direction: column;
+
+    gap: 15px;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  /* TABLES */
+
+  .order-table {
+
+    overflow-x: auto;
+
+    padding: 15px;
+  }
+
+  .order-table table {
+    min-width: 700px;
+  }
+
+  /* DATA */
+
+  .data {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    width: 100%;
+  }
+
+  .data .first,
+  .data .second {
+    width: 100%;
+  }
+
+  /* FUNDS */
+
+  .funds {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
+
+  /* CHART */
+
+  canvas {
+
+    width: 100% !important;
+
+    height: auto !important;
+  }
+
+  /* IMAGES */
+
+  img {
+    max-width: 100%;
+  }
+}
