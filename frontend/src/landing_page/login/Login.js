@@ -28,7 +28,7 @@ function Login() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:3002/login",
+        "https://zerodha-backend-s8sx.onrender.com/login",
         user
       );
 

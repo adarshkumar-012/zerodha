@@ -16,7 +16,7 @@ useEffect(() => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:3002/allHoldings",
+        "https://zerodha-backend-s8sx.onrender.com/allHoldings",
         {
           headers: {
             Authorization: token,

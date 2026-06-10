@@ -29,7 +29,7 @@ function Signup() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:3002/signup",
+        "https://zerodha-backend-s8sx.onrender.com/signup",
         user
       );
 
