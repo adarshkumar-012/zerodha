@@ -29,8 +29,8 @@ const Holdings = () => {
         if (err.response?.status === 401) {
           alert("Please login first");
 
-         window.location.href =
-  `https://zerodha-dashboard-h9fx.onrender.com/?token=${res.data.token}`;
+          window.location.href =
+            "https://zerodha-frontend-yoh0.onrender.com";
         }
       }
     };
