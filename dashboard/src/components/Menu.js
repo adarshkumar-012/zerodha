@@ -24,7 +24,7 @@ const Menu = () => {
   localStorage.removeItem("token");
 
   window.location.href =
-    "https://zerodha-frontend-yoh0.onrender.com/login";
+    "https://zerodha-frontend-yoh0.onrender.com";
 };
 
   const menuClass = "menu";

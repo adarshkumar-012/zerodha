@@ -29,19 +29,14 @@ const Holdings = () => {
         if (err.response?.status === 401) {
           alert("Please login first");
 
-          window.location.href =
-            "https://zerodha-frontend-yoh0.onrender.com/login";
+         window.location.href =
+  `https://zerodha-dashboard-h9fx.onrender.com/?token=${res.data.token}`;
         }
       }
     };
 
     fetchHoldings();
   }, []);
-    console.log(
-    "allHoldings",
-    allHoldings,
-    Array.isArray(allHoldings)
-  );
 
   const labels = allHoldings.map((stock) => stock.name);
 
