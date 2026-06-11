@@ -19,10 +19,17 @@ const DoughnoutChart = ({ data = [] }) => {
 
   // SAFETY CHECK
 
-  if (!Array.isArray(data)) {
-    return <p>No chart data available</p>;
+  if (!data || data.length === 0) {
+    return null;
   }
-
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "right",
+      },
+    },
+  };
   const chartData = {
 
     labels: data.map(
@@ -60,20 +67,20 @@ const DoughnoutChart = ({ data = [] }) => {
 
   };
 
-  return (
 
+  return (
     <div
       style={{
         width: "100%",
-        maxWidth: "500px",
+        maxWidth: "400px",
         margin: "0 auto",
       }}
     >
-
-      <Doughnut data={chartData} />
-
+      <Doughnut
+        data={chartData}
+        options={options}
+      />
     </div>
   );
 };
-
 export default DoughnoutChart;

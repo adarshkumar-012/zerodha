@@ -132,12 +132,19 @@ const Holdings = () => {
         </div>
       </div>
 
-      <div className="row mt-5">
-        <div className="col-md-8">
+      <div
+        style={{
+          display: "flex",
+          gap: "30px",
+          alignItems: "center",
+          marginTop: "40px",
+        }}
+      >
+        <div style={{ flex: 2 }}>
           <VerticalGraph data={data} />
         </div>
 
-        <div className="col-md-4">
+        <div style={{ flex: 1 }}>
           <DoughnoutChart data={allHoldings} />
         </div>
       </div>
