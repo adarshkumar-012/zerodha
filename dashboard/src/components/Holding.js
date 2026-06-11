@@ -37,6 +37,11 @@ const Holdings = () => {
 
     fetchHoldings();
   }, []);
+    console.log(
+    "allHoldings",
+    allHoldings,
+    Array.isArray(allHoldings)
+  );
 
   const labels = allHoldings.map((stock) => stock.name);
 

@@ -15,13 +15,14 @@ ChartJS.register(
   Legend
 );
 
-const DoughnoutChart = ({ data = [] }) => {
+const DoughnoutChart = ({ data }) => {
 
-  // SAFETY CHECK
+  console.log("Doughnut Data:", data);
 
-  if (!data || data.length === 0) {
+  if (!Array.isArray(data) || data.length === 0) {
     return null;
   }
+
   const options = {
     responsive: true,
     plugins: {
@@ -30,24 +31,17 @@ const DoughnoutChart = ({ data = [] }) => {
       },
     },
   };
-  const chartData = {
 
-    labels: data.map(
-      (stock) => stock.name
-    ),
+  const chartData = {
+    labels: data.map((stock) => stock.name),
 
     datasets: [
-
       {
-
         label: "Stock Price",
 
-        data: data.map(
-          (stock) => stock.price
-        ),
+        data: data.map((stock) => stock.price),
 
         backgroundColor: [
-
           "#4184f3",
           "#ff5722",
           "#4caf50",
@@ -56,17 +50,16 @@ const DoughnoutChart = ({ data = [] }) => {
           "#00bcd4",
           "#e91e63",
           "#795548",
-
+          "#607d8b",
+          "#ffc107",
+          "#8bc34a",
+          "#3f51b5",
         ],
 
         borderWidth: 1,
-
       },
-
     ],
-
   };
-
 
   return (
     <div
@@ -83,4 +76,5 @@ const DoughnoutChart = ({ data = [] }) => {
     </div>
   );
 };
+
 export default DoughnoutChart;
