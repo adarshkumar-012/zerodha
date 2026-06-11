@@ -21,10 +21,11 @@ const Menu = () => {
 
   const handleLogout = () => {
 
-    localStorage.removeItem("token");
+  localStorage.removeItem("token");
 
-    window.location.href = "/login";
-  };
+  window.location.href =
+    "https://zerodha-frontend-yoh0.onrender.com/login";
+};
 
   const menuClass = "menu";
 

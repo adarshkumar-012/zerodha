@@ -19,8 +19,9 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
+const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: "top",
@@ -33,5 +34,15 @@ export const options = {
 };
 
 export function VerticalGraph({ data }) {
-  return <Bar options={options} data={data} />;
+  return (
+    <div
+      style={{
+        height: "450px",
+        width: "100%",
+        marginTop: "30px",
+      }}
+    >
+      <Bar options={options} data={data} />
+    </div>
+  );
 }
