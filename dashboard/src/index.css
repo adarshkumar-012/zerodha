@@ -1035,3 +1035,17 @@ code {
     max-width: 100%;
   }
 }
+
+.row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.col-md-8 {
+  flex: 2;
+}
+
+.col-md-4 {
+  flex: 1;
+}
