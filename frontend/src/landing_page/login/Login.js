@@ -36,7 +36,8 @@ function Login() {
 
       alert("Login Successful");
 
-      navigate("/");
+    window.location.href =
+  "https://zerodha-dashboard-h9fx.onrender.com";
 
     } catch (err) {
 
