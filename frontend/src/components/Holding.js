@@ -30,7 +30,7 @@ const Holdings = () => {
           alert("Please login first");
 
           window.location.href =
-            "http://localhost:3000";
+            "https://zerodha-mocha.vercel.app";
         }
       }
     };

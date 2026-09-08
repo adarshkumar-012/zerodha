@@ -24,7 +24,7 @@ const Menu = () => {
   localStorage.removeItem("token");
 
   window.location.href =
-    "http://localhost:3000";
+    "https://zerodha-mocha.vercel.app";
 };
 
   const menuClass = "menu";

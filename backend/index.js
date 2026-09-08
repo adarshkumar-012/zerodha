@@ -21,7 +21,7 @@ const app = express();
 app.use(express.json());
 
 const allowedOrigins = [
-  process.env.FRONTEND_URL || "http://localhost:3000",
+  process.env.FRONTEND_URL || "https://zerodha-mocha.vercel.app",
   process.env.DASHBOARD_URL || "https://zerodha-dashboard-h9fx.onrender.com"
 ];
 
