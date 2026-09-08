@@ -26,7 +26,9 @@ const allowedOrigins = [
 ];
 
 app.use(cors({
-  origin: allowedOrigins,
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
   credentials: true
 }));
 
