@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
 import GeneralContext from "./GeneralContext";
@@ -9,60 +7,92 @@ import "./BuyActionWindow.css";
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
-  const [stockPrice, setStockPrice] = useState(0.0);
+  const [stockPrice, setStockPrice] = useState(0);
 
-  const handleBuyClick = () => {
-    axios.post("https://zerodha-backend-s8sx.onrender.com/newOrder", {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-      mode: "BUY",
-    });
+  const generalContext = useContext(GeneralContext);
 
-    GeneralContext.closeBuyWindow();
+  const handleBuyClick = async () => {
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_URL || "http://localhost:3002"}/newOrder`,
+        {
+          name: uid,
+          qty: Number(stockQuantity),
+          price: Number(stockPrice),
+          mode: "BUY",
+        }
+      );
+
+      console.log("Order Placed:", response.data);
+      alert("Order placed successfully!");
+
+      if (generalContext?.closeBuyWindow) {
+        generalContext.closeBuyWindow();
+      }
+    } catch (error) {
+      console.error("Buy Error:", error);
+
+      if (error.response) {
+        alert(`Error: ${error.response.data.message || "Server Error"}`);
+      } else {
+        alert("Failed to place order. Check backend connection.");
+      }
+    }
   };
 
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow();
+    if (generalContext?.closeBuyWindow) {
+      generalContext.closeBuyWindow();
+    }
   };
 
   return (
-    <div className="container" id="buy-window" draggable="true">
+    <div className="container" id="buy-window">
       <div className="regular-order">
         <div className="inputs">
           <fieldset>
             <legend>Qty.</legend>
             <input
               type="number"
-              name="qty"
-              id="qty"
-              onChange={(e) => setStockQuantity(e.target.value)}
+              min="1"
               value={stockQuantity}
+              onChange={(e) => setStockQuantity(e.target.value)}
             />
           </fieldset>
+
           <fieldset>
             <legend>Price</legend>
             <input
               type="number"
-              name="price"
-              id="price"
               step="0.05"
-              onChange={(e) => setStockPrice(e.target.value)}
+              min="0"
               value={stockPrice}
+              onChange={(e) => setStockPrice(e.target.value)}
             />
           </fieldset>
         </div>
       </div>
 
       <div className="buttons">
-        <span>Margin required ₹140.65</span>
+        <span>
+          Margin required ₹
+          {(Number(stockQuantity) * Number(stockPrice)).toFixed(2)}
+        </span>
+
         <div>
-          <Link className="btn btn-blue" onClick={handleBuyClick}>
+          <button
+            className="btn btn-blue"
+            onClick={handleBuyClick}
+          >
             Buy
-          </Link>
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+          </button>
+
+          <button
+            className="btn btn-grey"
+            onClick={handleCancelClick}
+          >
             Cancel
-          </Link>
+          </button>
         </div>
       </div>
     </div>

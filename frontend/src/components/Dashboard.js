@@ -17,13 +17,9 @@ const Dashboard = () => {
     const params = new URLSearchParams(window.location.search);
 
     const token = params.get("token");
-    const username = params.get("username");
 
     if (token) {
       localStorage.setItem("token", token);
-    }
-    if (username) {
-      localStorage.setItem("username", username);
     }
   }, []);
 
@@ -34,7 +30,7 @@ const Dashboard = () => {
 
     <div className="dashboard-container">
 
-      {/* MOBILE WATCHLIST BUTTON */}
+      {/* MOBILE MENU BUTTON */}
 
       <button
         className="mobile-menu-btn"
@@ -42,8 +38,7 @@ const Dashboard = () => {
           setShowSidebar(!showSidebar)
         }
       >
-        <span style={{marginRight: "8px"}}>🔍</span> 
-        {showSidebar ? "Close Watchlist" : "Open Watchlist"}
+        ☰
       </button>
 
       {/* SIDEBAR */}

@@ -9,6 +9,8 @@ const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
 const holdingRoutes = require("./routes/holdingRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const positionRoutes = require("./routes/positionRoutes");
 
 const app = express();
 
@@ -18,7 +20,15 @@ const app = express();
 
 app.use(express.json());
 
-app.use(cors());
+const allowedOrigins = [
+  process.env.FRONTEND_URL || "http://localhost:3000",
+  process.env.DASHBOARD_URL || "http://localhost:3001"
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 app.use(helmet());
 
@@ -37,6 +47,8 @@ connectDB();
 app.use("/", authRoutes);
 
 app.use("/", holdingRoutes);
+app.use("/", orderRoutes);
+app.use("/", positionRoutes);
 
 /* =========================
    SERVER

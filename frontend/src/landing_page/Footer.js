@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -12,12 +13,14 @@ function Footer() {
         <div className="row mt-5">
 
           {/* Logo Section */}
-          <div className="col">
-            <img
-              src="media/images/logo.svg"
-              alt="logo"
-              style={{ width: "60%", marginBottom: "20px" }}
-            />
+          <div className="col-12 col-md-4 mb-4">
+            <Link to="/">
+              <img
+                src="media/images/logo.svg"
+                alt="logo"
+                style={{ width: "60%", marginBottom: "20px" }}
+              />
+            </Link>
 
             <p className="text-muted">
               &copy; 2010 - 2027, Zerodha Broking Ltd.
@@ -71,59 +74,55 @@ function Footer() {
           </div>
 
           {/* Account */}
-          <div className="col">
+          <div className="col-6 col-md-2 mb-4">
             <h4 className="footer-heading">Account</h4>
-
-            <a href="" className="footer-link">Open demat account</a>
-            <a href="" className="footer-link">Minor demat account</a>
-            <a href="" className="footer-link">NRI demat account</a>
-            <a href="" className="footer-link">HUF demat account</a>
-            <a href="" className="footer-link">Commodity</a>
-            <a href="" className="footer-link">Dematerialisation</a>
-            <a href="" className="footer-link">Fund transfer</a>
-            <a href="" className="footer-link">MTF</a>
+            <a href="#" className="footer-link">Open demat account</a>
+            <a href="#" className="footer-link">Minor demat account</a>
+            <a href="#" className="footer-link">NRI demat account</a>
+            <a href="#" className="footer-link">HUF demat account</a>
+            <a href="#" className="footer-link">Commodity</a>
+            <a href="#" className="footer-link">Dematerialisation</a>
+            <a href="#" className="footer-link">Fund transfer</a>
+            <a href="#" className="footer-link">MTF</a>
           </div>
 
           {/* Support */}
-          <div className="col">
+          <div className="col-6 col-md-2 mb-4">
             <h4 className="footer-heading">Support</h4>
-
-            <a href="" className="footer-link">Contact us</a>
-            <a href="" className="footer-link">Support portal</a>
-            <a href="" className="footer-link">How to file a complaint?</a>
-            <a href="" className="footer-link">Status of your complaints</a>
-            <a href="" className="footer-link">Bulletin</a>
-            <a href="" className="footer-link">Circular</a>
-            <a href="" className="footer-link">Z-Connect blog</a>
-            <a href="" className="footer-link">Downloads</a>
+            <Link to="/support" className="footer-link">Contact us</Link>
+            <Link to="/support" className="footer-link">Support portal</Link>
+            <a href="#" className="footer-link">How to file a complaint?</a>
+            <a href="#" className="footer-link">Status of your complaints</a>
+            <a href="#" className="footer-link">Bulletin</a>
+            <a href="#" className="footer-link">Circular</a>
+            <a href="#" className="footer-link">Z-Connect blog</a>
+            <a href="#" className="footer-link">Downloads</a>
           </div>
 
           {/* Company */}
-          <div className="col">
+          <div className="col-6 col-md-2 mb-4">
             <h4 className="footer-heading">Company</h4>
-
-            <a href="" className="footer-link">About</a>
-            <a href="" className="footer-link">Philosophy</a>
-            <a href="" className="footer-link">Press & media</a>
-            <a href="" className="footer-link">Careers</a>
-            <a href="" className="footer-link">Zerodha Cares (CSR)</a>
-            <a href="" className="footer-link">Zerodha.tech</a>
-            <a href="" className="footer-link">Open source</a>
-            <a href="" className="footer-link">Referral program</a>
+            <Link to="/about" className="footer-link">About</Link>
+            <a href="#" className="footer-link">Philosophy</a>
+            <a href="#" className="footer-link">Press & media</a>
+            <a href="#" className="footer-link">Careers</a>
+            <a href="#" className="footer-link">Zerodha Cares (CSR)</a>
+            <a href="#" className="footer-link">Zerodha.tech</a>
+            <a href="#" className="footer-link">Open source</a>
+            <a href="#" className="footer-link">Referral program</a>
           </div>
 
           {/* Quick Links */}
-          <div className="col">
+          <div className="col-6 col-md-2 mb-4">
             <h4 className="footer-heading">Quick links</h4>
-
-            <a href="" className="footer-link">Upcoming IPOs</a>
-            <a href="" className="footer-link">Brokerage charges</a>
-            <a href="" className="footer-link">Market holidays</a>
-            <a href="" className="footer-link">Economic calendar</a>
-            <a href="" className="footer-link">Calculators</a>
-            <a href="" className="footer-link">Markets</a>
-            <a href="" className="footer-link">Sectors</a>
-            <a href="" className="footer-link">Gift Nifty</a>
+            <a href="#" className="footer-link">Upcoming IPOs</a>
+            <a href="#" className="footer-link">Brokerage charges</a>
+            <a href="#" className="footer-link">Market holidays</a>
+            <a href="#" className="footer-link">Economic calendar</a>
+            <a href="#" className="footer-link">Calculators</a>
+            <a href="#" className="footer-link">Markets</a>
+            <a href="#" className="footer-link">Sectors</a>
+            <a href="#" className="footer-link">Gift Nifty</a>
           </div>
         </div>
 
@@ -182,18 +181,18 @@ function Footer() {
 
           {/* Bottom Links */}
           <div
-            className="d-flex flex-wrap justify-content-center gap-3 mt-5 mb-4"
+            className="d-flex flex-wrap justify-content-center gap-3 mt-5 mb-4 footer-bottom-links"
           >
-            <a href="" className="footer-link">NSE</a>
-            <a href="" className="footer-link">BSE</a>
-            <a href="" className="footer-link">MCX</a>
-            <a href="" className="footer-link">MSEI</a>
-            <a href="" className="footer-link">Terms & conditions</a>
-            <a href="" className="footer-link">Policies & procedures</a>
-            <a href="" className="footer-link">Privacy policy</a>
-            <a href="" className="footer-link">Disclosure</a>
-            <a href="" className="footer-link">For investor's attention</a>
-            <a href="" className="footer-link">Investor charter</a>
+            <a href="#" className="footer-link">NSE</a>
+            <a href="#" className="footer-link">BSE</a>
+            <a href="#" className="footer-link">MCX</a>
+            <a href="#" className="footer-link">MSEI</a>
+            <a href="#" className="footer-link">Terms & conditions</a>
+            <a href="#" className="footer-link">Policies & procedures</a>
+            <a href="#" className="footer-link">Privacy policy</a>
+            <a href="#" className="footer-link">Disclosure</a>
+            <a href="#" className="footer-link">For investor's attention</a>
+            <a href="#" className="footer-link">Investor charter</a>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@ code {
 
   position: relative;
 
-  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 /* =====================================
@@ -79,7 +79,7 @@ code {
 
   background: white;
 
-  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
 
   border-radius: 12px;
 
@@ -346,13 +346,25 @@ code {
 }
 
 .buy {
-  background: #4184f3;
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s ease;
+}
+.buy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
 }
 
 .sell {
-  background: #ff5722;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
   color: white;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+  transition: all 0.3s ease;
+}
+.sell:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(239, 68, 68, 0.4);
 }
 
 .action {
@@ -374,7 +386,7 @@ code {
 
   margin-top: 20px;
 
-  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 .order-table table {
@@ -439,7 +451,7 @@ code {
 
   border-radius: 12px;
 
-  box-shadow: 0 0 10px rgba(0,0,0,0.04);
+  box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 .col h5 {
@@ -1048,4 +1060,72 @@ code {
 
 .col-md-4 {
   flex: 1;
+}/* =====================================
+   MOBILE NAVBAR OVERRIDE
+===================================== */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.mobile-nav-btn {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .mobile-nav-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #4184f3;
+    cursor: pointer;
+  }
+  .menus {
+    display: none !important;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  .menus.open {
+    display: flex !important;
+  }
+  .menus.open ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  .menus.open ul li {
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  .menus.open .profile {
+    margin-top: 15px;
+  }
+}
+/* =====================================
+   CLEAN WATCHLIST MOBILE BUTTON
+===================================== */
+@media screen and (max-width: 992px) {
+  .mobile-menu-btn {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    background: white !important;
+    color: #4184f3 !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #eee !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 100 !important;
+  }
 }

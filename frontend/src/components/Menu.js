@@ -6,12 +6,11 @@ const Menu = () => {
 
   const [selectedMenu, setSelectedMenu] = useState(0);
 
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] =
+    useState(false);
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
-    setIsMobileNavOpen(false); // Close menu on click
   };
 
   const handleProfileClick = () => {
@@ -37,21 +36,17 @@ const Menu = () => {
 
     <div className="menu-container">
 
-      <div className="menu-header">
-        <img
-          src="logo.png"
-          alt="logo"
-          className="logo"
-        />
-        <button 
-          className="mobile-nav-btn" 
-          onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-        >
-          ☰
-        </button>
-      </div>
+      {/* LOGO */}
 
-      <div className={`menus ${isMobileNavOpen ? "open" : ""}`}>
+      <img
+        src="logo.png"
+        alt="logo"
+        className="logo"
+      />
+
+      {/* MENUS */}
+
+      <div className="menus">
 
         <ul>
 
@@ -223,11 +218,11 @@ const Menu = () => {
           >
 
             <div className="avatar">
-              {localStorage.getItem("username") ? localStorage.getItem("username").substring(0, 2).toUpperCase() : "ZU"}
+              ZU
             </div>
 
             <p className="username">
-              {localStorage.getItem("username") || "USERID"}
+              USERID
             </p>
 
           </div>

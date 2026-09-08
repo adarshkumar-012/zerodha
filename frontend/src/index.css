@@ -61,32 +61,42 @@ body {
 ========================= */
 
 .login-btn {
-  border: 1px solid #387ed1;
-  color: #387ed1;
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(135deg, #6366f1, #3b82f6, #ec4899);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: #3b82f6;
   padding: 8px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s ease;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
 }
 
 .login-btn:hover {
-  background: #387ed1;
+  background-image: linear-gradient(135deg, #6366f1, #3b82f6, #ec4899), linear-gradient(135deg, #6366f1, #3b82f6, #ec4899);
   color: white !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
 
 .signup-btn {
-  background: #387ed1;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #ec4899 100%);
+  background-size: 200% auto;
   color: white;
-  padding: 8px 18px;
-  border-radius: 10px;
-  font-weight: 600;
-  transition: 0.3s ease;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
 .signup-btn:hover {
-  background: #125cb3;
+  background-position: right center;
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.4);
 }
 
 .logout-btn {
@@ -132,16 +142,11 @@ body {
 ==================================== */
 
 .hero-section {
-  background:
-    linear-gradient(
-      135deg,
-      #f8fbff 0%,
-      #eef5ff 100%
-    );
-
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 50%, #fdf2f8 100%);
   position: relative;
   overflow: hidden;
-  padding-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 60px;
 }
 
 .hero-content {
@@ -184,18 +189,20 @@ body {
 }
 
 .hero-btn-primary {
-  background: #387ed1;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
   color: white;
-  padding: 14px 30px;
-  border-radius: 14px;
-  font-weight: 600;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
 }
 
 .hero-btn-primary:hover {
-  background: #125cb3;
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.5);
   color: white;
 }
 
@@ -527,10 +534,12 @@ footer a:hover {
   color: rgb(66, 66, 66);
   margin-bottom: 16px;
   font-size: 1.1rem;
+  transition: all 0.3s ease;
 }
 
 .footer-link:hover {
   color: #387ed1;
+  transform: translateX(5px);
 }
 
 .footer-heading {
@@ -591,4 +600,96 @@ input:focus {
 #supportHero input:focus {
   outline: none;
   box-shadow: none;
+}/* =====================================
+   AUTH PAGES (LOGIN / SIGNUP) PREMIUM UI
+===================================== */
+
+.auth-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #e0e7ff 50%, #fdf2f8 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.auth-card:hover {
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.auth-top h2 {
+  font-weight: 800;
+  color: #1f2937;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.auth-top p {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.auth-logo {
+  width: 60px;
+  margin: 0 auto;
+}
+
+.auth-input {
+  border-radius: 12px !important;
+  padding: 12px 15px !important;
+  border: 1px solid #e5e7eb !important;
+  transition: all 0.3s ease !important;
+  background: #f9fafb !important;
+}
+
+.auth-input:focus {
+  border-color: #6366f1 !important;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+  background: white !important;
+}
+
+.auth-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+  color: white;
+  padding: 14px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.auth-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(99, 102, 241, 0.4);
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f3f4f6;
+  color: #4b5563;
+}
+
+.auth-footer a {
+  color: #6366f1;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
 }
