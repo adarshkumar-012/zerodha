@@ -9,7 +9,7 @@ const Orders = () => {
     const fetchOrders = async () => {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get(`${process.env.REACT_APP_API_URL || "http://localhost:3002"}/allOrders`, {
+        const res = await axios.get(`${process.env.REACT_APP_API_URL || "https://zerodha-backend-s8sx.onrender.com"}/allOrders`, {
           headers: { Authorization: token },
         });
         setAllOrders(res.data);

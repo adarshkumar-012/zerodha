@@ -27,14 +27,14 @@ function Signup() {
       setLoading(true);
 
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL || "http://localhost:3002"}/signup`,
+        `${process.env.REACT_APP_API_URL || "https://zerodha-backend-s8sx.onrender.com"}/signup`,
         user
       );
 
       alert(res.data.message);
 
       window.location.href =
-  "http://localhost:3001";
+  "https://zerodha-dashboard-h9fx.onrender.com";
 
     } catch (err) {
 

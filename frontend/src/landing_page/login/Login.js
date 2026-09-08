@@ -26,7 +26,7 @@ function Login() {
       setLoading(true);
 
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL || "http://localhost:3002"}/login`,
+        `${process.env.REACT_APP_API_URL || "https://zerodha-backend-s8sx.onrender.com"}/login`,
         user
       );
 
@@ -36,7 +36,7 @@ function Login() {
       alert("Login Successful");
 
     window.location.href =
-  `http://localhost:3001?token=${res.data.token}&username=${res.data.user.username}`;
+  `https://zerodha-dashboard-h9fx.onrender.com?token=${res.data.token}&username=${res.data.user.username}`;
 
     } catch (err) {
 

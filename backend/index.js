@@ -22,7 +22,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   process.env.FRONTEND_URL || "http://localhost:3000",
-  process.env.DASHBOARD_URL || "http://localhost:3001"
+  process.env.DASHBOARD_URL || "https://zerodha-dashboard-h9fx.onrender.com"
 ];
 
 app.use(cors({
